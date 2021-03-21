@@ -27,10 +27,18 @@ document.write("</ol>");
 // Cek built-in method Array
 // Bisa pakai slice() atau splice()
 
-let team = new Array();
-team = ['danu', 'nisa', 'syaroh', 'sita']
-document.write("Menggunakan Slice"+team.slice(1,2))
-document.write("<br>Menggunakan Splice"+team.splice(1,2))
+const namaTim = [
+  'Nisa - Leader',
+  'Arsita - Anggota',
+  'Luthfi - Leader',
+  'Syaroh - Anggota',
+];
+
+const timPertama = namaTim.slice(0, 2);
+const timKedua = namaTim.splice(2);
+
+console.log(`${timPertama[0]}, ${timPertama[1]}`);
+console.log(`${timKedua[0]}, ${timKedua[1]}`);
 
 // Diberikan 1 data array [3, 5, 7, 9, 11]
 // Buat sebuah program untuk membuat Array baru dari hasil perkalian array sebelumnya dengan perkalian 5.
@@ -47,8 +55,31 @@ console.log(newArr);
 // Array kedua = [‘Geography’, ‘Spanish’, ‘Programming’]
 // Program akan mengembalikan nilai TRUE or FALSE
 
-let arrayPertama = ['Math', 'English', 'Programming'];
-let arrayKedua = ['Geography', 'Spanish', 'Programming'];
-let isArray = Array.isArray(arrayPertama===arrayKedua);
-console.log(isArray);
+const arrayPertama = [
+  'Math',
+  'English',
+  'Programming' // nilai yang sama
+];
+
+const arrayKedua = [
+  'Geography',
+  'Spanish',
+  'Programming' // nilai yang sama
+];
+
+function cekNilaiYangSamaDariDuaArray(array1, array2) {
+  // array1.forEach atau array1.map
+  array1.forEach((nilaiDalamArray1, posisiNilaiDalamArray1) => {
+    console.log(`Nilai ${nilaiDalamArray1} ada di posisi ${posisiNilaiDalamArray1}`);
+
+    const nilaiDalamArray2 = array2[posisiNilaiDalamArray1];
+    console.log(`nilai dalam array kedua ${nilaiDalamArray2}`);
+
+    if (nilaiDalamArray1 === nilaiDalamArray2) {
+      console.log(true);
+    } else {
+      console.log(false);
+    }
+  });
+};
 
